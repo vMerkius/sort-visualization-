@@ -1,0 +1,23 @@
+.add-inputs {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-more-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.reset {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  padding: 0.3em;
+  border-radius: 8px;
+}

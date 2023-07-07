@@ -1,0 +1,54 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  min-width: 100px;
+}
+
+.custom-styled-btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.4em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgba(256, 256, 256, 0.8);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.custom-styled-btn:hover {
+  border-color: #646cff;
+  color: #646cff;
+}
+.custom-styled-btn:focus,
+.custom-styled-btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+  background-color: #bb86fc;
+}
+
+.delay-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.delay-btn {
+  cursor: pointer;
+  background-color: rgba(256, 256, 256, 0.8);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.delay-btn:hover {
+  border-color: #646cff;
+  color: #646cff;
+}
+
+.delay-btn:focus,
+.delay-btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+  background-color: #bb86fc;
+}

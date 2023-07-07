@@ -1,0 +1,43 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.cointainer {
+  width: 100%;
+}
+main {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
+}
+@media (min-width: 1280px) {
+  main {
+    justify-content: flex-end;
+    gap: 300px;
+  }
+  .buttons {
+    margin-right: 50px;
+  }
+}
+.error {
+  color: #cd6679;
+}
+
+.arrow-btn {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+  background-color: #03dac5;
+  padding: 0.5em;
+  cursor: pointer;
+  font-weight: 500;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.arrow-btn:hover {
+  background-color: #fff;
+}

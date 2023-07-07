@@ -1,0 +1,14 @@
+.graph-container {
+  border: 2px solid rgba(256, 256, 256, 0.8);
+  background-color: #000;
+  padding: 20px;
+  margin-left: 50px;
+  min-width: 800px;
+}
+
+.graph {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  align-items: flex-end;
+}
