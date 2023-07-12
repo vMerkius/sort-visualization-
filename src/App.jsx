@@ -13,12 +13,11 @@ import Instruction from "./components/Instruction/Instrucion";
 
 function App() {
   const [data, setData] = useState([1, 2, 3, 5, 3, 10, 2]);
-  const [highlightIndex, setHighlightIndex] = useState(-1);
+  const [highlightNext, setHighlightNext] = useState(-1);
   const [highlightPrevious, setHighlightPrevious] = useState(-1);
   const [delay, setDelay] = useState(500);
   const [locked, setLocked] = useState(false);
   const [pressedAgain, setPressedAgain] = useState(false);
-  const [stop, setStop] = useState(false);
   const [openInstruction, setOpenInstruction] = useState(false);
 
   const handleSort = (sortingName) => {
@@ -29,10 +28,9 @@ function App() {
           bubbleSort(
             data,
             setData,
-            setHighlightIndex,
+            setHighlightNext,
             setHighlightPrevious,
-            delay,
-            stop
+            delay
           );
 
           break;
@@ -40,7 +38,7 @@ function App() {
           selectionSort(
             data,
             setData,
-            setHighlightIndex,
+            setHighlightNext,
             setHighlightPrevious,
             delay
           );
@@ -49,7 +47,7 @@ function App() {
           insertionSort(
             data,
             setData,
-            setHighlightIndex,
+            setHighlightNext,
             setHighlightPrevious,
             delay
           );
@@ -58,7 +56,7 @@ function App() {
           quickSort(
             data,
             setData,
-            setHighlightIndex,
+            setHighlightNext,
             setHighlightPrevious,
             0,
             data.length,
@@ -67,7 +65,7 @@ function App() {
           console.log(data);
           break;
         case "bogo":
-          bogoSort(data, setData, setHighlightIndex, delay);
+          bogoSort(data, setData, delay);
           break;
       }
     } else {
@@ -99,7 +97,7 @@ function App() {
       <main>
         <Graph
           data={data}
-          highlightIndex={highlightIndex}
+          highlightNext={highlightNext}
           highlightPrevious={highlightPrevious}
         ></Graph>
         <SortButtons
@@ -108,7 +106,7 @@ function App() {
           setData={setData}
           setLocked={setLocked}
           setPressedAgain={setPressedAgain}
-          setStop={setStop}
+          locked={locked}
         ></SortButtons>
       </main>
     </div>

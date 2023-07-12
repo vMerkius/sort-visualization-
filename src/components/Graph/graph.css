@@ -4,6 +4,7 @@
   padding: 20px;
   margin-left: 50px;
   min-width: 800px;
+  position: relative;
 }
 
 .graph {
@@ -11,4 +12,10 @@
   justify-content: space-between;
   height: 300px;
   align-items: flex-end;
+}
+
+.shuffle-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }

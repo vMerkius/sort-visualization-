@@ -6,7 +6,7 @@ const SideSection = ({
   setData,
   setLocked,
   setPressedAgain,
-  setStop,
+  locked,
 }) => {
   return (
     <div className="buttons">
@@ -61,7 +61,7 @@ const SideSection = ({
         setData={setData}
         setLocked={setLocked}
         setPressedAgain={setPressedAgain}
-        setStop={setStop}
+        locked={locked}
       ></AddSection>
     </div>
   );

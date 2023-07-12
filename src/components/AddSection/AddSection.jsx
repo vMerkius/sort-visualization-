@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./AddSection.css";
-const AddSection = ({ setData, setLocked, setPressedAgain, setStop }) => {
+const AddSection = ({ setData, setLocked, setPressedAgain, locked }) => {
   const [numbers, setNumbers] = useState("");
   const [error, setError] = useState("");
   const addRandomNumber = () => {
@@ -14,7 +14,7 @@ const AddSection = ({ setData, setLocked, setPressedAgain, setStop }) => {
     setNumbers(e.target.value);
   };
   const handleAddNumbers = () => {
-    const regex = /^(\d+,)*\d+$/; // Only allow numbers separated by comma
+    const regex = /^(\d+,)*\d+$/;
     if (!numbers.match(regex)) {
       setError("Input must only contain numbers separated by commas");
     } else {
@@ -28,15 +28,16 @@ const AddSection = ({ setData, setLocked, setPressedAgain, setStop }) => {
     }
   };
   const handleClear = () => {
-    setData([]);
-    setLocked(false);
-    setPressedAgain(false);
+    if (!locked) {
+      setData([]);
+      setLocked(false);
+      setPressedAgain(false);
+    } else {
+      console.log("blad");
+    }
   };
   const handleReset = () => {
-    setData([1, 2, 3, 5, 3, 10, 2]);
-    setLocked(false);
-    setPressedAgain(false);
-    setStop(true);
+    window.location.reload();
   };
   return (
     <div>

@@ -1,8 +1,6 @@
 import "./graph.css";
 
-const Graph = ({ data, highlightIndex, highlightPrevious }) => {
-  console.log(highlightIndex);
-
+const Graph = ({ data, highlightNext, highlightPrevious }) => {
   return (
     <div className="graph-container">
       <div className="graph">
@@ -15,13 +13,16 @@ const Graph = ({ data, highlightIndex, highlightPrevious }) => {
               backgroundColor:
                 index === highlightPrevious
                   ? "green"
-                  : index === highlightIndex
+                  : index === highlightNext
                   ? "red"
                   : "#bb86fc",
             }}
           />
         ))}
       </div>
+      <button className="shuffle-btn delay-btn">
+        <i class="fas fa-random"></i>
+      </button>
     </div>
   );
 };
