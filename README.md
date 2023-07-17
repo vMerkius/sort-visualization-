@@ -2,6 +2,10 @@
 
 Visual Sorting Algorithms to projekt, który umożliwia wizualizację działania różnych algorytmów sortowania. Pozwala to lepiej zrozumieć, jak działają te algorytmy.
 
+## Live
+
+https://friendly-lamington-67daa6.netlify.app/
+
 ## Instalacja
 
 1. Sklonuj repozytorium na swoim komputerze za pomocą `git clone https://github.com/username/repo-name.git`.
