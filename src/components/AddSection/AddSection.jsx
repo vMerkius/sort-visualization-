@@ -4,26 +4,30 @@ const AddSection = ({ setData, setLocked, setPressedAgain, locked }) => {
   const [numbers, setNumbers] = useState("");
   const [error, setError] = useState("");
   const addRandomNumber = () => {
-    let randomNumber = Math.floor(Math.random() * 10);
-    while (randomNumber === 0) {
-      randomNumber = Math.floor(Math.random() * 10);
+    if (!locked) {
+      let randomNumber = Math.floor(Math.random() * 10);
+      while (randomNumber === 0) {
+        randomNumber = Math.floor(Math.random() * 10);
+      }
+      setData((prevData) => [...prevData, randomNumber]);
     }
-    setData((prevData) => [...prevData, randomNumber]);
   };
   const handleChange = (e) => {
     setNumbers(e.target.value);
   };
   const handleAddNumbers = () => {
-    const regex = /^(\d+,)*\d+$/;
-    if (!numbers.match(regex)) {
-      setError("Input must only contain numbers separated by commas");
-    } else {
-      const numberArray = numbers.split(",").map(Number);
-      if (numberArray.some((num) => num >= 30)) {
-        setError("All numbers must be less than 30");
+    if (!locked) {
+      const regex = /^(\d+,)*\d+$/;
+      if (!numbers.match(regex)) {
+        setError("Input must only contain numbers separated by commas");
       } else {
-        setError("");
-        setData((prevData) => [...prevData, ...numberArray]);
+        const numberArray = numbers.split(",").map(Number);
+        if (numberArray.some((num) => num >= 30)) {
+          setError("All numbers must be less than 30");
+        } else {
+          setError("");
+          setData((prevData) => [...prevData, ...numberArray]);
+        }
       }
     }
   };

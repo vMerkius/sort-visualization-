@@ -1,6 +1,27 @@
 import "./graph.css";
 
-const Graph = ({ data, highlightNext, highlightPrevious }) => {
+const Graph = ({
+  data,
+  highlightNext,
+  highlightPrevious,
+  highlightPivot,
+  setData,
+  locked,
+  time,
+}) => {
+  const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+  const handleShuffle = () => {
+    if (!locked) {
+      const newData = shuffle([...data]);
+      setData(newData);
+    }
+  };
   return (
     <div className="graph-container">
       <div className="graph">
@@ -12,17 +33,25 @@ const Graph = ({ data, highlightNext, highlightPrevious }) => {
               width: "10px",
               backgroundColor:
                 index === highlightPrevious
-                  ? "green"
+                  ? "#28a428"
                   : index === highlightNext
-                  ? "red"
+                  ? "#ff4d4d"
+                  : index === highlightPivot
+                  ? "#004d99"
                   : "#bb86fc",
             }}
           />
         ))}
       </div>
-      <button className="shuffle-btn delay-btn">
-        <i class="fas fa-random"></i>
+      <button
+        onClick={() => {
+          handleShuffle();
+        }}
+        className="shuffle-btn delay-btn"
+      >
+        <i className="fas fa-random"></i>
       </button>
+      {time !== 0 && !isNaN(time) && <h3 className="time">{time / 1000}s</h3>}
     </div>
   );
 };

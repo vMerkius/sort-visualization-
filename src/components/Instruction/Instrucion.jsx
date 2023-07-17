@@ -1,14 +1,14 @@
 import "./instruction.css";
-import linkedInIcon from "./linkedin.svg";
+import linkedInIcon from "../../assets/linkedin.svg";
 
 const Instruction = ({ openInstruction, setOpenInstruction }) => {
   return (
     <div className={`instruction ${openInstruction ? "open" : ""}`}>
       <h2>How to use</h2>
       <h3>1. Choose preffered speed (default 1x).</h3>
-      <h3>2. Choose algorythm, which you want to check.</h3>
-      <h3>3. Modify shown array.</h3>
-      <h3>4. Clear or reset and check other algorythms</h3>
+      <h3>2. Modify displayed array.</h3>
+      <h3>3. Select the algorithm you want to use.</h3>
+      <h3>4. Reset and try other algorithms.</h3>
       <button
         onClick={() => setOpenInstruction(!openInstruction)}
         className="arrow-btn-left"
